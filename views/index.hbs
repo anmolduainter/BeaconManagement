@@ -46,7 +46,7 @@
             <br>
         <br>
         <br>
-        <div class="row" style="background-color:cornsilk ; padding: 10px 10px 10px 10px">
+        <div class="row" id="{{ab.beaconName}}" style="background-color:cornsilk ; padding: 10px 10px 10px 10px">
             <div class="col">
                 <h6>Beacon Name : <span>{{ab.beaconName}}</span></h6>
                 <h6>Advertised ID : <span>{{ab.advertisedId.id}}</span></h6>
@@ -63,7 +63,14 @@
                 <h6>Status : <span>{{ab.status}}</span></h6>
             </div>
             <div class="col">
-
+                {{#if (active ab.status)}}
+                   <button class="btn btn-warning deactivate">Deactivate</button>
+                 {{else}}
+                    <button class="btn btn-primary activate">Activate</button>
+                {{/if}}
+                <br>
+                <br>
+                    <button class="btn btn-danger decommissioned">Decommission</button>
             </div>
         </div>
         {{/each}}

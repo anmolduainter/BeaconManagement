@@ -6,10 +6,24 @@ const auth = require('./Auth/auth')
 const plus = google.plus('v1');
 const Session = require('express-session')
 const OAuth2 = google.auth.OAuth2;
-
+const bp = require('body-parser')
 const ListingBeacon = require('./routers/ListingBeacon')
+const DeactivateBeacon = require('./routers/DeactivateBeacon')
+const ActivateBeacon = require('./routers/ActivateBeacon')
 
 const app =express()
+app.use(bp.urlencoded({extended:true}))
+app.use(bp.json());
+
+const hbs = require('hbs')
+hbs.registerHelper("active",function(status){
+    if (status=="ACTIVE"){
+        return true;
+    }
+    else{
+        return false;
+    }
+})
 
 app.set('view engine','hbs');
 app.use(express.static(__dirname + '/public_files'));
@@ -69,11 +83,13 @@ app.get('/login',(req,res)=>{
 //Logout
 app.get('/logout',(req,res)=>{
     res.redirect('https://accounts.google.com/logout')
-})
+});
 
 //Middlewares
 app.use('/list',ListingBeacon)
+app.use('/deactivate',DeactivateBeacon)
+app.use('/activate' ,ActivateBeacon)
 
 app.listen(3000,()=>{
     console.log("Server Running")
-})
+});

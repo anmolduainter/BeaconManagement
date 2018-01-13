@@ -49,7 +49,7 @@ let register=(details)=>{
 
 // activate the beacon
 let activate = (details)=>{
-    let beaconName = details.beaconName;
+    return new Promise((resolve)=>{let beaconName = details.beaconName;
     let projectId = details.projectId;
     let token = details.token;
     let options = { method: 'POST',
@@ -59,9 +59,9 @@ let activate = (details)=>{
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         console.log(body);
-        return body;
+        resolve(body);
     });
-}
+})}
 
 //list beacons
 let listBeacons = (details)=>{
@@ -144,7 +144,7 @@ let getAttachmentDetails = (details)=>{
 
 //deactivate beacon
 let deactivateBeacon = (details)=>{
-    let beaconName = details.beaconName;
+    return new Promise((resolve)=>{let beaconName = details.beaconName;
     let pI = details.pI;
     let token = details.token;
     let options = { method: 'POST',
@@ -154,9 +154,9 @@ let deactivateBeacon = (details)=>{
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         console.log(body);
-        return body;
+        resolve(body);
     });
-}
+})}
 
 // decommission the beacon
 let decommission = (details)=>{
