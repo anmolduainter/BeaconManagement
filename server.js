@@ -3,11 +3,14 @@ const google = require('googleapis');
 const proximitybeacon = google.proximitybeacon('v1beta1');
 const express = require('express')
 const auth = require('./Auth/auth')
+const plus = google.plus('v1');
 const Session = require('express-session')
 var OAuth2 = google.auth.OAuth2;
 
 const app =express()
 
+app.set('view engine','hbs');
+app.use(express.static(__dirname + '/public_files'));
 app.use(Session({
     secret: 'Beacons',
     resave: true,
@@ -19,15 +22,17 @@ let oauth2Client = new OAuth2(
     auth.googleAuth.clientSecret,
     auth.googleAuth.callbackUrl
 );
-let scopes = ['https://www.googleapis.com/auth/userlocation.beacon.registry'];
+let scopes = ['https://www.googleapis.com/auth/userlocation.beacon.registry',
+                'email'];
 let url = oauth2Client.generateAuthUrl({
     access_type: 'offline',
     scope: scopes,
 });
 
 app.get('/',(req,res)=>{
-    res.send("Welcome Here")
-})
+    res.render('index')
+});
+
 
 app.get('/auth/google/callback',(req,res)=>{
     console.log(req.query.code)
@@ -38,13 +43,21 @@ app.get('/auth/google/callback',(req,res)=>{
         if (!err) {
             oauth2Client.credentials = tokens;
             session["tokens"] = tokens
-            res.redirect('/')
+            plus.people.get({
+                userId: 'me',
+                auth: oauth2Client
+            }, function (err, response) {
+                console.log(response)
+                res.render('index',{loggedIn:true,user:{email:response.emails[0].value}})
+            });
         }
         else{
-            res.send("Login Again")
+            res.render('index')
         }
     });
 });
+
+
 
 //Login
 app.get('/login',(req,res)=>{
