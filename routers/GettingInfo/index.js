@@ -28,14 +28,27 @@ router.post('/',(req,res)=>{
                     token:req.session["tokens"].access_token
                 }
                 beacon.getAttachmentDetails(det).then(d2=>{
-                    let result = {
-                        data:body,
-                        attachment:JSON.parse(d2)
+                    let det={
+                        beaconName:req.body.beaconName,
+                        pI:'neural-myth-191906',
+                        token:req.session["tokens"].access_token,
+                        pageSize:'10',
+                        pageToken:'',
+                        alertFilter:''
                     }
-                    console.log("RESULT------------------")
-                    console.log(result)
-                    //rendering
-                    res.send(result)
+                    beacon.dia(det).then(d3=>{
+                        console.log("Diaognistics ------------------------")
+                        console.log(d3)
+                        let result = {
+                            data:body,
+                            attachment:JSON.parse(d2),
+                            diag:d3
+                        }
+                        console.log("RESULT------------------")
+                        console.log(result)
+                        //rendering
+                        res.send(result)
+                    })
                 })
             })
         })

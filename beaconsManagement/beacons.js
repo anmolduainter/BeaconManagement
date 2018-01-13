@@ -250,6 +250,26 @@ let NamespacesList = (details)=>{
     });
 })}
 
+//Diagnostics
+let dia = (details)=>{
+    return new Promise((resolve)=>{
+        var options = { method: 'GET',
+            url: 'https://proximitybeacon.googleapis.com/v1beta1/'+details.beaconName+'/diagnostics',
+            qs:
+                { pageSize: details.pageSize,
+                    pageToken: details.pageToken,
+//                    alertFilter: details.alertFilter,
+                    projectId: details.projectId },
+            headers: { authorization: 'Bearer '+details.token} };
+
+        request(options, function (error, response, body) {
+            if (error) throw new Error(error);
+            console.log(body);
+            resolve(body)
+        });
+    })
+}
+
 module.exports.register = register
 module.exports.activate = activate
 module.exports.listBeacons = listBeacons
@@ -261,7 +281,7 @@ module.exports.deleteAttachment = deleteAttachment
 module.exports.UpdateInfo = UpdateInfo;
 module.exports.getAttachmentDetails = getAttachmentDetails
 module.exports.NamespacesList = NamespacesList
-
+module.exports.dia = dia
 // module.exports={
 //     register: register(),
 //     activate: activate(),

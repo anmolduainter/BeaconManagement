@@ -53,44 +53,6 @@ function moreInfo(eve){
     $.post('/getInfo',query,(res)=>{
         //console.log(res)
         console.log(res)
-        let container = $(this).parent().parent();
-        container.empty();
-        let body = `
-            <div class="row">
-                <div class="col">
-                    <br>
-                    <h6>Beacon Name : <span>${res.data.beaconName}</span></h6>
-                    <br>
-                    <h6>Advertised ID : <span>${res.data.advertisedId.id}</span></h6>
-                    <br>
-                    <h6>Advertised Type : <span>${res.data.advertisedId.type}</span></h6>
-                    <br>
-                    <h6>Place ID : <span>${res.data.placeId}</span></h6>
-                    <br>
-                    <h6>Latitude : <span>${res.data.latLng.latitude}</span></h6>
-                    <br>
-                    <h6>Longitude : <span>${res.data.latLng.longitude}</span></h6>
-                    <br>
-                    <h6>ExpectedStability : <span>${res.data.expectedStability}</span></h6>
-                    <br>
-                    <h6>Position : <span>${res.data.properties.position}</span></h6>
-                </div>
-                <div class="col">
-                    <h5>Status : <span>${res.data.status}</span></h5>
-                </div>
-            </div>        
-        `
-
-        container.append(body)
-
+        localStorage.setItem("BeaconInfo",JSON.stringify(res))
+        window.location.href = '/info.html'
     })}
-
-// <div class="col">
-//     <h5>Attachments</h5>
-//     <br>
-//     <br>
-//     <h6>Name : <span>${res.attachment.attachments[0].attachmentName}</span></h6>
-// <br>
-// <br>
-// <h6>Data : <span>${res.attachment.attachments[0].data}</span></h6>
-// </div>
