@@ -48,19 +48,25 @@
         <br>
         <div class="row" id="{{ab.beaconName}}" style="background-color:cornsilk ; padding: 10px 10px 10px 10px">
             <div class="col">
-                <h6>Beacon Name : <span>{{ab.beaconName}}</span></h6>
-                <h6>Advertised ID : <span>{{ab.advertisedId.id}}</span></h6>
-                <h6>Advertised Type : <span>{{ab.advertisedId.type}}</span></h6>
+                <h5>Beacon Name :<span style="font-weight: 400;font-size: medium">{{ab.beaconName}}</span></h5>
+                <br>
+                <h5>Advertised ID : <span style="font-weight: 400;font-size: medium">{{ab.advertisedId.id}}</span></h5>
+                <br>
+                <h5>Advertised Type : <span style="font-weight: 400;font-size: medium">{{ab.advertisedId.type}}</span></h5>
             </div>
             <div class="col">
-                <h6>Place ID : <span>{{ab.placeId}}</span></h6>
-                <h6>Latitude : <span>{{ab.latLng.latitude}}</span></h6>
-                <h6>Longitude : <span>{{ab.latLng.longitude}}</span></h6>
+                <h5>Place ID : <span style="font-weight: 400;font-size: medium">{{ab.placeId}}</span></h5>
+                <br>
+                <h5>Latitude : <span style="font-weight: 400;font-size: medium">{{ab.latLng.latitude}}</span></h5>
+                <br>
+                <h5>Longitude : <span style="font-weight: 400;font-size: medium">{{ab.latLng.longitude}}</span></h5>
             </div>
             <div class="col">
-                <h6>Expected Stability :<span>{{ab.expectedStability}}</span></h6>
-                <h6>Description : <span>{{ab.description}}</span></h6>
-                <h6>Status : <span>{{ab.status}}</span></h6>
+                <h5>Expected Stability :<span style="font-weight: 400;font-size: medium">{{ab.expectedStability}}</span></h5>
+                <br>
+                <h5>Description : <span style="font-weight: 400;font-size: medium">{{ab.description}}</span></h5>
+                <br>
+                <h5>Status : <span style="font-weight: 400;font-size: medium">{{ab.status}}</span></h5>
             </div>
             <div class="col">
                 {{#if (active ab.status)}}
@@ -71,6 +77,9 @@
                 <br>
                 <br>
                     <button class="btn btn-danger decommissioned">Decommission</button>
+                 <br>
+                <br>
+                    <button class="btn btn-info moreInfo">More Info</button>
             </div>
         </div>
         {{/each}}

@@ -86,20 +86,19 @@ let listBeacons = (details)=>{
 
 //getting info of one beacon
 let getinfoPerBeacon = (details)=>{
-    let beaconName = details.beaconName;
+    return new Promise((resolve)=>{let beaconName = details.beaconName;
     let pI = details.projectId;
     let token = details.token;
     var options = { method: 'GET',
-        url: 'https://proximitybeacon.googleapis.com/v1beta1/beacons/'+beaconName,
+        url: 'https://proximitybeacon.googleapis.com/v1beta1/'+beaconName,
         qs: { projectId:pI},
         headers: { authorization:'Bearer '+token} };
-
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         console.log(body);
-        return body
+        resolve(body)
     });
-}
+})}
 
 // Setting Attachment data to a beacon
 let setAttachment = (details)=>{
@@ -125,7 +124,7 @@ let setAttachment = (details)=>{
 
 //getting Attachment for the beacon
 let getAttachmentDetails = (details)=>{
-    let beaconName = details.beaconName;
+    return new Promise((resolve)=>{ let beaconName = details.beaconName;
     let pI = details.pI;
     let nT = details.nT;
     let token = details.token;
@@ -138,9 +137,9 @@ let getAttachmentDetails = (details)=>{
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         console.log(body);
-        return body;
+        resolve(body);
     });
-}
+})}
 
 //deactivate beacon
 let deactivateBeacon = (details)=>{
@@ -238,7 +237,7 @@ let UpdateInfo = (details)=>{
 
 //Lists all attachment namespaces owned by your Google Developers Console project.
 let NamespacesList = (details)=>{
-    let pI = details.pI;
+    return new Promise((resolve)=>{let pI = details.pI;
     let tokens = details.token;
     let options = { method: 'GET',
         url: 'https://proximitybeacon.googleapis.com/v1beta1/namespaces',
@@ -247,9 +246,9 @@ let NamespacesList = (details)=>{
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         console.log(body);
-        return body;
+        resolve(body);
     });
-}
+})}
 
 module.exports.register = register
 module.exports.activate = activate

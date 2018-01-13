@@ -10,6 +10,7 @@ const bp = require('body-parser')
 const ListingBeacon = require('./routers/ListingBeacon')
 const DeactivateBeacon = require('./routers/DeactivateBeacon')
 const ActivateBeacon = require('./routers/ActivateBeacon')
+const getInfoperBeacon = require('./routers/GettingInfo')
 
 const app =express()
 app.use(bp.urlencoded({extended:true}))
@@ -89,6 +90,7 @@ app.get('/logout',(req,res)=>{
 app.use('/list',ListingBeacon)
 app.use('/deactivate',DeactivateBeacon)
 app.use('/activate' ,ActivateBeacon)
+app.use('/getInfo',getInfoperBeacon)
 
 app.listen(3000,()=>{
     console.log("Server Running")
