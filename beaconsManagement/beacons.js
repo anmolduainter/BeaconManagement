@@ -1,4 +1,5 @@
 const request = require('request')
+const rp = require('request-promise')
 
 //Registering the beacon
 let register=(details)=>{
@@ -55,7 +56,6 @@ let activate = (details)=>{
         url: 'https://proximitybeacon.googleapis.com/v1beta1/'+beaconName+':activate',
         qs: { projectId: projectId },
         headers: { authorization: 'Bearer '+token } };
-
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         console.log(body);
@@ -65,7 +65,7 @@ let activate = (details)=>{
 
 //list beacons
 let listBeacons = (details)=>{
-    let q = details.q;
+    return new Promise((resolve)=>{let q = details.q;
     let pT = details.pT;
     let pS = details.pS;
     let pI = details.pI;
@@ -78,13 +78,11 @@ let listBeacons = (details)=>{
                 pageSize:pS,
                 projectId:pI},
         headers: { authorization: 'Bearer '+token}};
-
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        console.log(body);
-        return body;
+        resolve(body)
     });
-}
+})};
 
 //getting info of one beacon
 let getinfoPerBeacon = (details)=>{

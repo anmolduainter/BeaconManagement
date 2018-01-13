@@ -5,7 +5,9 @@ const express = require('express')
 const auth = require('./Auth/auth')
 const plus = google.plus('v1');
 const Session = require('express-session')
-var OAuth2 = google.auth.OAuth2;
+const OAuth2 = google.auth.OAuth2;
+
+const ListingBeacon = require('./routers/ListingBeacon')
 
 const app =express()
 
@@ -48,7 +50,7 @@ app.get('/auth/google/callback',(req,res)=>{
                 auth: oauth2Client
             }, function (err, response) {
                 console.log(response)
-                res.render('index',{loggedIn:true,user:{email:response.emails[0].value}})
+                res.render('index',{listingbeacon:false,loggedIn:true,user:{email:response.emails[0].value}})
             });
         }
         else{
@@ -68,6 +70,9 @@ app.get('/login',(req,res)=>{
 app.get('/logout',(req,res)=>{
     res.redirect('https://accounts.google.com/logout')
 })
+
+//Middlewares
+app.use('/list',ListingBeacon)
 
 app.listen(3000,()=>{
     console.log("Server Running")
