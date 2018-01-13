@@ -32,9 +32,10 @@ router.post('/',(req,res)=>{
                         data:body,
                         attachment:JSON.parse(d2)
                     }
+                    console.log("RESULT------------------")
+                    console.log(result)
                     //rendering
-
-
+                    res.send(result)
                 })
             })
         })
