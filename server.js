@@ -13,6 +13,7 @@ const ActivateBeacon = require('./routers/ActivateBeacon')
 const getInfoperBeacon = require('./routers/GettingInfo')
 const setAttach = require('./routers/SetAttachment')
 const deleteAttach = require('./routers/DeleteAttachments')
+const register = require('./routers/RegBeacon')
 
 const app =express()
 app.use(bp.urlencoded({extended:true}))
@@ -95,6 +96,8 @@ app.use('/activate' ,ActivateBeacon)
 app.use('/getInfo',getInfoperBeacon)
 app.use('/setAttach',setAttach)
 app.use('/deleteAttach',deleteAttach)
+app.use('/regBeacon',register)
+
 
 app.listen(3000,()=>{
     console.log("Server Running")

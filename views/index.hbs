@@ -33,6 +33,8 @@
             {{#if loggedIn}}
                 <span style="font-size: medium;color: #0d151f">{{user.email}}</span>
                 <a href="/logout" class="btn btn-outline-success my-2 my-sm-0" role="button" aria-pressed="true">LogOut</a>
+                <br>
+                <a href="/RegBeacon" class="btn btn-outline-primary my-2 my-sm-0" role="button" aria-pressed="true">Register Beacon</a>
             {{else}}
                 <a href="/login" class="btn btn-outline-success my-2 my-sm-0" role="button" aria-pressed="true" >Login</a>
             {{/if}}

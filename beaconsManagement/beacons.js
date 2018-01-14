@@ -3,7 +3,7 @@ const rp = require('request-promise')
 
 //Registering the beacon
 let register=(details)=>{
-    
+  return new Promise((resolve)=>{
     let projectId = details.projectId;
     let token = details.token;
     let adtype = details.adtype;
@@ -16,7 +16,6 @@ let register=(details)=>{
     let expectedStab = details.eS;
     let desc = details.desc;
     let prop = details.prop;
-    
     var options = { method: 'POST',
         url: 'https://proximitybeacon.googleapis.com/v1beta1/beacons:register',
         qs: { projectId: projectId },
@@ -43,9 +42,9 @@ let register=(details)=>{
     };
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        return body;
+        resolve(body)
     })
-}
+})};
 
 // activate the beacon
 let activate = (details)=>{
