@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const beacon = require('../../beaconsManagement/beacons')
 const isUndefined = require("is-undefined");
+const base64 = require('base-64')
+const utf = require('utf8')
 
 router.post('/',(req,res)=>{
     let details = {
@@ -36,12 +38,20 @@ router.post('/',(req,res)=>{
                         pageToken:'',
                         alertFilter:''
                     }
+                    let de = JSON.parse(d2)
+                    let en = de.attachments;
+                    for (let i=0 ; i<en.length;i++){
+                        let encoded = en[i].data;
+                        let bytes = base64.decode(encoded);
+                        let text = utf.decode(bytes);
+                        en[i].data = text
+                    }
                     beacon.dia(det).then(d3=>{
                         console.log("Diaognistics ------------------------")
                         console.log(d3)
                         let result = {
                             data:body,
-                            attachment:JSON.parse(d2),
+                            attachment:en,
                             diag:d3
                         }
                         console.log("RESULT------------------")

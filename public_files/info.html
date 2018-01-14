@@ -15,48 +15,47 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="jumbotron text-center">
-                <h1>Beacon Info</h1>
+            <div style="background-color:mintcream;" class="jumbotron text-center">
+                <span style="font-weight:400; font-size:xx-large">Beacon Info</span>
             </div>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col">
-            <h3 class="text-center">Beacon Details</h3>
-            <br>
             <h5>Beacon Name : <span  style="font-weight: 400;font-size: medium" id="beaconName"></span></h5>
             <br>
             <h5>Advertised ID : <span  style="font-weight: 400;font-size: medium" id="AI"></span></h5>
             <br>
             <h5>Advertised Type : <span  style="font-weight: 400;font-size: medium" id="AT"></span></h5>
             <br>
+            <h5>ExpectedStability : <span  style="font-weight: 400;font-size: medium" id="ES"></span></h5>
+            <br>
+            <h5>Position : <span  style="font-weight: 400;font-size: medium" id="POS"></span></h5>
+        </div>
+        <div class="col">
             <h5>Place ID : <span  style="font-weight: 400;font-size: medium" id="PI"></span></h5>
             <br>
             <h5>Latitude : <span  style="font-weight: 400;font-size: medium" id="Lat"></span></h5>
             <br>
             <h5>Longitude : <span  style="font-weight: 400;font-size: medium" id="Lon"></span></h5>
             <br>
-            <h5>ExpectedStability : <span  style="font-weight: 400;font-size: medium" id="ES"></span></h5>
-            <br>
-            <h5>Position : <span  style="font-weight: 400;font-size: medium" id="POS"></span></h5>
-        </div>
-        <div class="col" id="diag">
+            <h5>Status : <span id="Sta"></span></h5>
             <br>
             <br>
-            <h5 class="text-center">Status : <span id="Sta"></span></h5>
-            <br>
-            <br>
-            <h4 class="text-center">ALERT!!!</h4>
         </div>
     </div>
     <div class="row">
         <div class="col" id="attachments">
-            <h5 class="text-center">Attachments</h5>
-        </div>
-        <div class="col">
+            <br>
+            <h4 class="text-center">Attachments</h4>
             <input type="text" id="textaddAttach" class="form-control" placeholder="Add Data....">
-            <button id="addAttachment" class="btn btn-primary">Add Attachment</button>
+            <button id="addAttachment" class="btn btn-primary pull-right">Add Attachment</button>
+            <br>
+        </div>
+        <div class="col"  id="diag">
+            <h4 class="text-center">ALERT!!!</h4>
+            <br>
         </div>
     </div>
 </div>

@@ -41,12 +41,12 @@ $(function(){
     PI.text(res.data.placeId)
     Pos.text(res.data.properties.position)
 
-    let arr = res.attachment.attachments;
+    let arr = res.attachment;
     let body = ``
     for (let i=0;i<arr.length;i++){
         body=body + `<br><br><h5>Name : <span style="font-weight: 400;font-size: medium">${arr[i].attachmentName}</span></h5>
 <br><h5>Data : <span  style="font-weight: 400;font-size: medium">${arr[i].data}</span></h5>
-<button class="btn btn-danger deleteAttach" id="${i}" name="${arr[i].attachmentName}">Delete</button>`
+<button class="btn btn-danger deleteAttach pull-right" id="${i}" name="${arr[i].attachmentName}">Delete</button><br><br><hr>`
     }
 
     attachDiv.append(body)
@@ -58,7 +58,7 @@ $(function(){
     console.log(arr1)
     let body1= ``
     for (let i=0 ; i<arr1.length;i++){
-        body1 = body1 + `<br><h6>${arr1[i]}</h6>
+        body1 = body1 + `<br><h6 class="text-center">${arr1[i]}</h6>
 <br>`
     }
     diag.append(body1)
@@ -76,7 +76,7 @@ $(function(){
             $.post('/setAttach',q,(data)=>{
                 console.log("Attachment Done")
                 console.log(data)
-                res.attachment.attachments.push(data)
+                res.attachment.push(data)
                 localStorage.setItem("BeaconInfo",JSON.stringify(res))
                 console.log(data)
                 location.reload()
@@ -96,7 +96,7 @@ function deleteAttach(eve){
     $.post('/deleteAttach',det,(res)=>{
         console.log(res)
         let arr = JSON.parse(localStorage.getItem("BeaconInfo"))
-        arr.attachment.attachments.splice(id,1)
+        arr.attachment.splice(id,1)
         console.log(arr)
         localStorage.setItem("BeaconInfo",JSON.stringify(arr))
         location.reload()

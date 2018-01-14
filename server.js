@@ -68,7 +68,8 @@ app.get('/auth/google/callback',(req,res)=>{
                 auth: oauth2Client
             }, function (err, response) {
                 console.log(response)
-                res.render('index',{listingbeacon:false,loggedIn:true,user:{email:response.emails[0].value}})
+                res.redirect('/list')
+//                res.render('index',{listingbeacon:true,loggedIn:true,user:{email:response.emails[0].value}})
             });
         }
         else{
