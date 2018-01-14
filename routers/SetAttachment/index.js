@@ -2,6 +2,8 @@ const router = require('express').Router()
 const beacon = require('../../beaconsManagement/beacons')
 const base64 = require('base-64')
 const utf = require('utf8')
+const empty = require('is-empty')
+
 router.post('/',(req,res)=>{
     let det = {
         pI:'neural-myth-191906',
@@ -26,6 +28,10 @@ router.post('/',(req,res)=>{
         beacon.setAttachment(det).then(data=>{
             console.log("SetAttach---------------------->")
             console.log(data)
+            let encoded =data.data;
+            let bytes = base64.decode(encoded);
+            let text = utf.decode(bytes);
+            data.data = text
             res.send(data)
         })
     })

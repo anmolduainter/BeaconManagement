@@ -1,3 +1,6 @@
+
+let loader
+
 $(function(){
 
     let beaconName;
@@ -13,6 +16,9 @@ $(function(){
     let diag;
     let input;
     let addAttach;
+
+    loader = $('#loader')
+    loader.hide()
 
     beaconName = $('#beaconName')
     AI = $('#AI')
@@ -66,17 +72,19 @@ $(function(){
     addAttach.click(function () {
         let d = input.val()
         if (d == ""){
-            console.log("Empty input")
+            alert("Please specify input")
         }
         else{
             let q = {
                 data:d,
                 beaconName:res.data.beaconName
             }
+            loader.show(10)
             $.post('/setAttach',q,(data)=>{
                 console.log("Attachment Done")
                 console.log(data)
-                res.attachment.push(data)
+                loader.hide(10)
+                arr.push(data)
                 localStorage.setItem("BeaconInfo",JSON.stringify(res))
                 console.log(data)
                 location.reload()
@@ -93,12 +101,14 @@ function deleteAttach(eve){
     let det={
         attachName:name
     }
+    loader.show(10)
     $.post('/deleteAttach',det,(res)=>{
         console.log(res)
-        let arr = JSON.parse(localStorage.getItem("BeaconInfo"))
-        arr.attachment.splice(id,1)
-        console.log(arr)
-        localStorage.setItem("BeaconInfo",JSON.stringify(arr))
+        let arr1 = JSON.parse(localStorage.getItem("BeaconInfo"))
+        arr1.attachment.splice(id,1)
+        loader.hide(10)
+        console.log(arr1)
+        localStorage.setItem("BeaconInfo",JSON.stringify(arr1))
         location.reload()
     })
 }

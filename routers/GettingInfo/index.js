@@ -3,6 +3,7 @@ const beacon = require('../../beaconsManagement/beacons')
 const isUndefined = require("is-undefined");
 const base64 = require('base-64')
 const utf = require('utf8')
+const empty = require('is-empty')
 
 router.post('/',(req,res)=>{
     let details = {
@@ -38,13 +39,19 @@ router.post('/',(req,res)=>{
                         pageToken:'',
                         alertFilter:''
                     }
-                    let de = JSON.parse(d2)
-                    let en = de.attachments;
-                    for (let i=0 ; i<en.length;i++){
-                        let encoded = en[i].data;
-                        let bytes = base64.decode(encoded);
-                        let text = utf.decode(bytes);
-                        en[i].data = text
+                    let en;
+                    console.log(d2)
+                    if (!empty(JSON.parse(d2))){
+                        let de = JSON.parse(d2)
+                        en = de.attachments;
+                        for (let i=0 ; i<en.length;i++){
+                            let encoded = en[i].data;
+                            let bytes = base64.decode(encoded);
+                            let text = utf.decode(bytes);
+                            en[i].data = text
+                        }
+                    }else{
+                        en = []
                     }
                     beacon.dia(det).then(d3=>{
                         console.log("Diaognistics ------------------------")
