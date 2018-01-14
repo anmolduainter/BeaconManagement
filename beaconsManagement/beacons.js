@@ -102,13 +102,14 @@ let getinfoPerBeacon = (details)=>{
 
 // Setting Attachment data to a beacon
 let setAttachment = (details)=>{
+return new Promise((resolve)=>{
     let BeaconName = details.beaconName;
     let pI = details.projectId;
     let token = details.token;
     let data = details.data;
     let nT = details.nT;
     let options = { method: 'POST',
-        url: 'https://proximitybeacon.googleapis.com/v1beta1/beacons/'+BeaconName+'/attachments',
+        url: 'https://proximitybeacon.googleapis.com/v1beta1/'+BeaconName+'/attachments',
         qs: { projectId: pI },
         headers: { authorization: 'Bearer '+token },
         body:
@@ -118,8 +119,9 @@ let setAttachment = (details)=>{
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         console.log(body);
-        return body;
+        resolve(body)
     });
+})
 }
 
 //getting Attachment for the beacon
@@ -175,7 +177,7 @@ let decommission = (details)=>{
 
 //Delete Attachment
 let deleteAttachment = (details)=>{
-    let attachName = details.attachName;
+    return new Promise((resolve)=>{ let attachName = details.attachName;
     let pI = details.pI;
     let token = details.token;
     var options = { method: 'DELETE',
@@ -185,9 +187,9 @@ let deleteAttachment = (details)=>{
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
         console.log(body);
-        return body;
+        resolve(body);
     });
-}
+})}
 
 // Updates the info of specific beacon
 let UpdateInfo = (details)=>{
