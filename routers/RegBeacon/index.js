@@ -1,5 +1,12 @@
 const router = require('express').Router()
 const beacon = require('../../beaconsManagement/beacons')
+const MongoClient = require('mongodb').MongoClient;
+
+// Connection URL
+const url = 'mongodb://localhost:27017';
+
+// Database Name
+const dbName = 'BeaconManagement';
 
 router.post('/',(req,res)=>{
 
@@ -16,7 +23,18 @@ router.post('/',(req,res)=>{
         eS:req.body.eS,
         desc:req.body.desc,
         prop:req.body.prop
-    }
+    };
+
+    MongoClient.connect(url, function(err, client) {
+        console.log("Connected successfully to server");
+        const db = client.db(dbName);
+
+
+
+
+        client.close();
+    });
+
 
     beacon.register(det).then(data=>{
         console.log(data)
