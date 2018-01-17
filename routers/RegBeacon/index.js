@@ -10,7 +10,7 @@ const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017';
 
 // Database Name
-const dbName = 'BeaconManagement';
+const dbName = 'BM';
 
 router.post('/',(req,res)=>{
 
@@ -33,21 +33,26 @@ router.post('/',(req,res)=>{
         desc:req.body.desc,
         prop:req.body.prop
     };
-
-    // MongoClient.connect(url, function(err, client) {
-    //     console.log("Connected successfully to server");
-    //     const db = client.db(dbName);
-    //     reg.reg(det,db).then(d1=>{
-    //        console.log("---------------------------------> MONGO DB ")
-    //        console.log(d1)
-    //     });
-    //     client.close();
-    // });
     beacon.register(det).then(data=>{
         console.log("REGSITER------------------------------------->")
-        console.log(data)
-        res.send(data)
+        console.log(data.error.code)
+        if (data.error.code === 400 || data.error.code === 404 || data.error.code === 409){
+            res.send("ERROR")
+        }
+        else{
+            MongoClient.connect(url, function(err, client) {
+                console.log("Connected successfully to server");
+                const db = client.db(dbName);
+                reg.reg(det,db).then(d1=>{
+                   console.log("---------------------------------> MONGO DB ")
+                   console.log(d1)
+                    res.send("Success")
+                });
+                client.close();
+            });
+        }
+        //res.send(data.error.code)
     })
 });
 
-module.exports = router
+module.exports = router;

@@ -13,33 +13,40 @@ $(function () {
     let btn = $('#register')
 
     btn.click(function () {
-        // let det={
-        //     adType: adType.val(),
-        //     adid: adId.val(),
-        //     status: status.val(),
-        //     placeId: placeId.val(),
-        //     lat: lat.val(),
-        //     lon: lon.val(),
-        //     name: name.val(),
-        //     eS: eS.val(),
-        //     desc: desc.val(),
-        //     prop: prop.val()
-        // }
-
         let det={
-            adType: "EDDYSTONE",
-            adid: "ILOVEMYINDIA",
-            status: "ACTIVE",
-            placeId:"ChIJTxax6NoSkFQRWPvFXI1LypQ",
-            lat: "47.6693771",
-            lon: "47.6693771",
-            name: "1",
-            eS: "STABLE",
-            desc: "My own reg beacon",
-            prop: "enteryway"
+            adType: adType.val(),
+            adid: adId.val(),
+            status: status.val(),
+            placeId: placeId.val(),
+            lat: lat.val(),
+            lon: lon.val(),
+            name: name.val(),
+            eS: eS.val(),
+            desc: desc.val(),
+            prop: prop.val()
         }
+
+        // let det={
+        //     adType: "EDDYSTONE",
+        //     adid: "ILOVEMYINDIA1234",
+        //     status: "ACTIVE",
+        //     placeId:"ChIJTxax6NoSkFQRWPvFXI1LypQ",
+        //     lat: "47.6693771",
+        //     lon: "47.6693771",
+        //     name: "1",
+        //     eS: "STABLE",
+        //     desc: "My own reg beacon",
+        //     prop: "enteryway"
+        // };
+
         $.post('/regBeacon',det,(res)=>{
-            console.log(res)
+            console.log(res);
+            if (res === "ERROR"){
+                alert("Something went wrong , Please check your details")
+            }
+            else{
+                window.location.href = '/list'
+            }
         })
     })
 });
