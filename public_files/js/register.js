@@ -1,7 +1,7 @@
 $(function () {
 
     let adType = $('#adType')
-    let adId = $('#ad')
+    let adId = $('#adid')
     let placeId = $('#place-id')
     let lat = $('#lat')
     let lon = $('#lon')
@@ -13,21 +13,33 @@ $(function () {
     let btn = $('#register')
 
     btn.click(function () {
+        // let det={
+        //     adType: adType.val(),
+        //     adid: adId.val(),
+        //     status: status.val(),
+        //     placeId: placeId.val(),
+        //     lat: lat.val(),
+        //     lon: lon.val(),
+        //     name: name.val(),
+        //     eS: eS.val(),
+        //     desc: desc.val(),
+        //     prop: prop.val()
+        // }
+
         let det={
-            adType: adType.val(),
-            adid: adId.val(),
-            status: status.val(),
-            placeId: placeId.val(),
-            lat: lat.val(),
-            lon: lon.val(),
-            name: name.val(),
-            eS: eS.val(),
-            desc: des.val(),
-            prop: prop.val()
+            adType: "EDDYSTONE",
+            adid: "ILOVEMYINDIA",
+            status: "ACTIVE",
+            placeId:"ChIJTxax6NoSkFQRWPvFXI1LypQ",
+            lat: "47.6693771",
+            lon: "47.6693771",
+            name: "1",
+            eS: "STABLE",
+            desc: "My own reg beacon",
+            prop: "enteryway"
         }
-
-        $.post('/register',det,(res)=>{
-
+        $.post('/regBeacon',det,(res)=>{
+            console.log(res)
         })
     })
 });

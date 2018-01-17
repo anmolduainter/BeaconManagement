@@ -5,32 +5,42 @@
     <title>BeaconInfo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./css/style3.css">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./js/register.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <div class="jumbotron text-center">
-            <h1>Registeration</h1>
+        <div class="col text-center">
+            <div style="background: transparent" class="jumbotron text-center">
+                <h1>Registeration</h1>
+            </div>
         </div>
     </div>
     <div class="row">
-        <div class="col"></div>
-        <div class="col">
-            <input type="text" id="adType" class="form-control" placeholder="Advertised Type ...">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <div class="backgr"></div>
+            <input type="text" id="adType" class="form-control" placeholder="Advertised Type (Eddystone) ...">
             <br>
-            <input type="text" id="status" class="form-control" placeholder="Status.....">
+            <input type="text" id="adid" class="form-control" placeholder="Advertised Id...">
             <br>
+            <input type="text" id="status" class="form-control" placeholder="Status (ACTIVE , INACTIVE).....">
+            <br>
+            <div class="input-group">
             <input type="text" id="Place-Id" class="form-control" placeholder="Place Id....">
+                <a class="btn btn-primary my-2 my-sm-0" href="/Map.html" role="button" aria-pressed="true">Get PlaceId/Lat/Lon</a>
+            </div>
             <br>
             <input type="text" id="lat" class="form-control" placeholder="Latitude...">
             <br>
             <input type="text" id="lon" class="form-control" placeholder="Longitude...">
             <br>
-            <input type="text" id="name" class="form-control" placeholder="name...">
+            <input type="text" id="name" class="form-control" placeholder="indoor level name ....">
             <br>
             <input type="text" id="ExpectedStability" class="form-control" placeholder="Expected Stability">
             <br>
@@ -38,9 +48,14 @@
             <br>
             <input  type="text" id="Prop" class="form-control" placeholder="Prop">
             <br>
-            <button id="register" class="btn btn-primary"> REGISTER </button>
+            <button id="register" class="btn btn-primary text-center"> REGISTER </button>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
-        <div class="col"></div>
+        <div class="col-2">
+        </div>
     </div>
 </div>
 </body>

@@ -1,0 +1,20 @@
+body{
+    background: url("../images/wall.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+.col-2{
+    background-color: #4d90fe;
+    opacity: 0.5;
+}
+
+#register{
+    font-size:large;
+    font-weight: 500;
+    font-style: oblique;
+    padding: 20px 30px 20px 30px;
+}

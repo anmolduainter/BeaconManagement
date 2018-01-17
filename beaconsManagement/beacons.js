@@ -16,27 +16,29 @@ let register=(details)=>{
     let expectedStab = details.eS;
     let desc = details.desc;
     let prop = details.prop;
-    var options = { method: 'POST',
+    let options = { method: 'POST',
         url: 'https://proximitybeacon.googleapis.com/v1beta1/beacons:register',
         qs: { projectId: projectId },
         headers: { authorization: 'Bearer '+token},
         body:{
-            "advertisedId": {
-                "type": adtype,
-                "id": adid
+            advertisedId: {
+                type: adtype,
+                id: adid
             },
-            "status": status,
-            "placeId": placeId,
-            "latLng": {
-                "latitude": lat,
-                "longitude": lon
+            status: status,
+            placeId: placeId,
+            latLng: {
+                latitude: lat,
+                longitude: lon
             },
-            "indoorLevel": {
-                "name": name
+            indoorLevel: {
+                name: name
             },
-            "expectedStability": expectedStab,
-            "description": desc,
-            "properties":prop
+            expectedStability: expectedStab,
+            description: desc,
+            properties:{
+                position:prop
+            }
         },
         json: true
     };
