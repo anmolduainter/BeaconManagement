@@ -162,19 +162,21 @@ let deactivateBeacon = (details)=>{
 
 // decommission the beacon
 let decommission = (details)=>{
-    let beaconName = details.beaconName;
-    let pI = details.pI;
-    let token = details.token;
-    let options = { method: 'POST',
-        url: 'https://proximitybeacon.googleapis.com/v1beta1/'+beaconName+':decommission',
-        qs: { projectId:pI },
-        headers: { authorization: 'Bearer '+token}};
-    request(options, function (error, response, body) {
-        if (error) throw new Error(error);
-        console.log(body);
-        return body;
-    });
-}
+    return new Promise((resolve)=>{
+        let beaconName = details.beaconName;
+        let pI = details.pI;
+        let token = details.token;
+        let options = { method: 'POST',
+            url: 'https://proximitybeacon.googleapis.com/v1beta1/'+beaconName+':decommission',
+            qs: { projectId:pI },
+            headers: { authorization: 'Bearer '+token}};
+        request(options, function (error, response, body) {
+            if (error) throw new Error(error);
+            console.log(body);
+            resolve(body);
+        });
+    })
+};
 
 //Delete Attachment
 let deleteAttachment = (details)=>{

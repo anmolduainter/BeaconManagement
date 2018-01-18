@@ -14,6 +14,7 @@ const getInfoperBeacon = require('./routers/GettingInfo')
 const setAttach = require('./routers/SetAttachment')
 const deleteAttach = require('./routers/DeleteAttachments')
 const register = require('./routers/RegBeacon')
+const decommission = require('./routers/DecommisionBeacon')
 
 const app =express()
 app.use(bp.urlencoded({extended:true}))
@@ -98,6 +99,7 @@ app.use('/getInfo',getInfoperBeacon)
 app.use('/setAttach',setAttach)
 app.use('/deleteAttach',deleteAttach)
 app.use('/regBeacon',register)
+app.use('/decomm',decommission)
 
 
 app.listen(3000,()=>{
