@@ -8,7 +8,7 @@ $(function () {
     let eS = $('#ES')
     let status = $('#status')
     let name = $('#name')
-    let desc = $('#desc')
+    let desc = $('#Desc')
     let prop = $('#Prop')
     let btn = $('#register')
 

@@ -26,8 +26,11 @@ router.post('/',(req,res)=>{
             // res.send("success")
             MongoClient.connect(url, function(err, client) {
                 console.log("Connected successfully to server");
+                let det = {
+                    beaconName:bn
+                }
                 const db = client.db(dbName);
-                reg.removeOne(det,db).then(d1=>{
+                removeOne.removeOne(det,db).then(d1=>{
                     console.log("---------------------------------> MONGO DB ")
                     console.log(d1)
                     res.send("Success")

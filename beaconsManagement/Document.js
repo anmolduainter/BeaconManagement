@@ -21,5 +21,23 @@ let removeOne = function(det , db){
     })
 }
 
+let removeAll = function (db) {
+    return new Promise((resolve)=>{
+        db.collection('BM').deleteMany({},function (err,result) {
+            resolve(result)
+        });
+    })
+}
+
+let getAll = function (db) {
+    return new Promise((resolve)=>{
+        db.collection('BM').find({}).toArray((err,data)=>{
+            resolve(data)
+        })
+    })
+}
+
 module.exports.reg = register;
 module.exports.removeOne = removeOne
+module.exports.removeAll = removeAll
+module.exports.getAll = getAll

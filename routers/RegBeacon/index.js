@@ -48,7 +48,7 @@ router.post('/',(req,res)=>{
             MongoClient.connect(url, function(err, client) {
                 console.log("Connected successfully to server");
                 const db = client.db(dbName);
-                reg.reg(det,db).then(d1=>{
+                reg.reg(data,db).then(d1=>{
                    console.log("---------------------------------> MONGO DB ")
                    console.log(d1)
                     res.send("Success")

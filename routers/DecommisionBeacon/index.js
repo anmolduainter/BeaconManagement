@@ -23,17 +23,7 @@ router.post('/',(req,res)=>{
 
         // Not able to understand what went wrong
         if (!empty(data)){
-            // res.send("success")
-            MongoClient.connect(url, function(err, client) {
-                console.log("Connected successfully to server");
-                const db = client.db(dbName);
-                reg.removeOne(det,db).then(d1=>{
-                    console.log("---------------------------------> MONGO DB ")
-                    console.log(d1)
-                    res.send("Success")
-                });
-                client.close();
-            });
+            res.send("Success")
         }
         else{
             res.send("fail")
