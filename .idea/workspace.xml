@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bcc66c7-61fb-4d19-bb6b-a47681a35dc8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/journal/WiredTigerLog.0000000001" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/WiredTiger.wt" afterPath="$PROJECT_DIR$/db/WiredTiger.wt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/collection-0--4359767956264044532.wt" afterPath="$PROJECT_DIR$/db/collection-0--4359767956264044532.wt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/collection-7--4359767956264044532.wt" afterPath="$PROJECT_DIR$/db/collection-7--4359767956264044532.wt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/index-1--4359767956264044532.wt" afterPath="$PROJECT_DIR$/db/index-1--4359767956264044532.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/diagnostic.data/metrics.2018-01-18T09-37-25Z-00000" afterPath="$PROJECT_DIR$/db/diagnostic.data/metrics.2018-01-18T09-37-25Z-00000" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/diagnostic.data/metrics.interim" afterPath="$PROJECT_DIR$/db/diagnostic.data/metrics.interim" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/index-8--4359767956264044532.wt" afterPath="$PROJECT_DIR$/db/index-8--4359767956264044532.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/journal/WiredTigerLog.0000000002" afterPath="$PROJECT_DIR$/db/journal/WiredTigerLog.0000000002" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/sizeStorer.wt" afterPath="$PROJECT_DIR$/db/sizeStorer.wt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Database/deleteAll.js" afterPath="$PROJECT_DIR$/Database/deleteAll.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beaconsManagement/Document.js" afterPath="$PROJECT_DIR$/beaconsManagement/Document.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/WiredTiger.turtle" afterPath="$PROJECT_DIR$/db/WiredTiger.turtle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/mongod.lock" afterPath="$PROJECT_DIR$/db/mongod.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_files/Register.html" afterPath="$PROJECT_DIR$/public_files/Register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_files/js/register.js" afterPath="$PROJECT_DIR$/public_files/js/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routers/DecommisionBeacon/index.js" afterPath="$PROJECT_DIR$/routers/DecommisionBeacon/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routers/DeleteBeacon/index.js" afterPath="$PROJECT_DIR$/routers/DeleteBeacon/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routers/RegBeacon/index.js" afterPath="$PROJECT_DIR$/routers/RegBeacon/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routers/DeleteBeacon/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            <state relative-caret-position="499">
+              <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -63,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public_files/js/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="1488">
+              <caret line="62" column="46" lean-forward="false" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -134,8 +127,8 @@
         <option value="$PROJECT_DIR$/routers/DecommisionBeacon/index.js" />
         <option value="$PROJECT_DIR$/routers/RegBeacon/index.js" />
         <option value="$PROJECT_DIR$/public_files/Register.html" />
-        <option value="$PROJECT_DIR$/public_files/js/register.js" />
         <option value="$PROJECT_DIR$/routers/DeleteBeacon/index.js" />
+        <option value="$PROJECT_DIR$/public_files/js/register.js" />
       </list>
     </option>
   </component>
@@ -192,88 +185,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RegBeacon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DeleteBeacon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DecommisionBeacon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="public_files" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -293,34 +204,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beaconsManagement" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -450,12 +333,12 @@
       <workItem from="1515947898881" duration="599000" />
       <workItem from="1516165076152" duration="199000" />
       <workItem from="1516165292449" duration="16531000" />
-      <workItem from="1516256391025" duration="12511000" />
+      <workItem from="1516256391025" duration="14227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100406000" />
+    <option name="totallyTimeSpent" value="102122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1282" height="687" extended-state="7" />
@@ -801,18 +684,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_files/js/register.js">
+    <entry file="file://$PROJECT_DIR$/routers/DeleteBeacon/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="499">
+          <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routers/DeleteBeacon/index.js">
+    <entry file="file://$PROJECT_DIR$/public_files/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        <state relative-caret-position="1488">
+          <caret line="62" column="46" lean-forward="false" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
           <folding />
         </state>
       </provider>

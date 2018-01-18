@@ -60,7 +60,7 @@ $(function () {
                 alert("Something went wrong , Please check your details")
             }
             else{
-                window.location=document.referrer;
+                window.location.href = '/list'
             }
         })
     })
