@@ -22,7 +22,7 @@ router.post('/',(req,res)=>{
         console.log("Data : -------------> " + data + "successfully deactivated")
 
         // Not able to understand what went wrong
-        if (empty(data)){
+        if (!empty(data)){
             // res.send("success")
             MongoClient.connect(url, function(err, client) {
                 console.log("Connected successfully to server");

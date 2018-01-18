@@ -16,11 +16,11 @@ $(function(){
     info.click(moreInfo)
     decom.click(decommsioned)
 
-    deleteBeacon.click(deleteBeacon)
+    deleteBeacon.click(deleteBeaconfunc)
 
 });
 
-function deleteBeacon(eve){
+function deleteBeaconfunc(eve){
     let id = $(this).parent().parent().attr('id')
     let query = {beaconName : id}
     console.log(id)

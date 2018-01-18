@@ -278,16 +278,18 @@ let dia = (details)=>{
 
 // Delete the beacon
 let deleteBeacon = function (details) {
-    let options = { method: 'DELETE',
-        url: 'https://proximitybeacon.googleapis.com/v1beta1/'+details.beaconName,
-        qs: {
-            projectId: details.projectId },
-        headers: { authorization: 'Bearer '+details.token} };
-    request(options, function (error, response, body) {
-        if (error) throw new Error(error);
-        console.log(body);
-        resolve(body)
-    });
+    return new Promise((resolve)=>{
+        let options = { method: 'DELETE',
+            url: 'https://proximitybeacon.googleapis.com/v1beta1/'+details.beaconName,
+            qs: {
+                projectId: details.projectId },
+            headers: { authorization: 'Bearer '+details.token} };
+        request(options, function (error, response, body) {
+            if (error) throw new Error(error);
+            console.log(body);
+            resolve(body)
+        });
+    })
 }
 
 module.exports.register = register
