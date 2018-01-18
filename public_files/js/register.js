@@ -2,7 +2,7 @@ $(function () {
 
     let adType = $('#adType')
     let adId = $('#adid')
-    let placeId = $('#place-id')
+    let placeId = $('#Place-Id')
     let lat = $('#lat')
     let lon = $('#lon')
     let eS = $('#ES')
@@ -11,6 +11,18 @@ $(function () {
     let desc = $('#desc')
     let prop = $('#Prop')
     let btn = $('#register')
+
+    let loader = $('#loader')
+
+    loader.hide()
+
+    let a = localStorage.getItem("InfoMap")
+    console.log(a)
+        let j = JSON.parse(a)
+        console.log(j)
+        placeId.val(j.placeId)
+        lat.val(j.location.lat)
+        lon.val(j.location.lng)
 
     btn.click(function () {
         let det={
@@ -39,13 +51,16 @@ $(function () {
         //     prop: "enteryway"
         // };
 
+        loader.show()
+
         $.post('/regBeacon',det,(res)=>{
             console.log(res);
+            loader.hide()
             if (res === "ERROR"){
                 alert("Something went wrong , Please check your details")
             }
             else{
-                window.location.href = '/list'
+                window.location=document.referrer;
             }
         })
     })

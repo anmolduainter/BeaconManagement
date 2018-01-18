@@ -48,6 +48,7 @@ $(function(){
     Pos.text(res.data.properties.position)
 
     let arr = res.attachment;
+    console.log(arr)
     let body = ``
     for (let i=0;i<arr.length;i++){
         body=body + `<br><br><h5>Name : <span style="font-weight: 400;font-size: medium">${arr[i].attachmentName}</span></h5>
@@ -60,16 +61,24 @@ $(function(){
     let btn = $('.deleteAttach')
     btn.click(deleteAttach)
 
+    console.log(JSON.parse(res.diag))
     let arr1 = JSON.parse(res.diag).diagnostics[0].alerts
     console.log(arr1)
-    let body1= ``
-    for (let i=0 ; i<arr1.length;i++){
-        body1 = body1 + `<br><h6 class="text-center">${arr1[i]}</h6>
+    if (arr1!=undefined){
+        let body1= ``
+        for (let i=0 ; i<arr1.length;i++){
+            body1 = body1 + `<br><h6 class="text-center">${arr1[i]}</h6>
 <br>`
+        }
+        diag.append(body1)
     }
-    diag.append(body1)
+    else{
+        diag.append(`<br><h6 class="text-center">No Alerts</h6>
+<br>`)
+    }
 
     addAttach.click(function () {
+        console.log("Cliked add attach")
         let d = input.val()
         if (d == ""){
             alert("Please specify input")

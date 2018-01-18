@@ -2,6 +2,8 @@ const router = require('express').Router()
 const beacon = require('../../beaconsManagement/beacons')
 const reg = require('../../beaconsManagement/Document')
 const base64 = require('base-64');
+const isUndefined = require("is-undefined");
+
 const utf8 = require('utf8');
 
 const MongoClient = require('mongodb').MongoClient;
@@ -35,9 +37,12 @@ router.post('/',(req,res)=>{
     };
     beacon.register(det).then(data=>{
         console.log("REGSITER------------------------------------->")
-        console.log(data.error.code)
-        if (data.error.code === 400 || data.error.code === 404 || data.error.code === 409){
-            res.send("ERROR")
+        console.log(data)
+
+        if (!isUndefined(data.error)){
+            if (data.error.code === 400 || data.error.code === 404 || data.error.code === 409){
+                res.send("ERROR")
+            }
         }
         else{
             MongoClient.connect(url, function(err, client) {
