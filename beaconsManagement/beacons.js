@@ -275,6 +275,21 @@ let dia = (details)=>{
     })
 }
 
+
+// Delete the beacon
+let deleteBeacon = function (details) {
+    let options = { method: 'DELETE',
+        url: 'https://proximitybeacon.googleapis.com/v1beta1/'+details.beaconName,
+        qs: {
+            projectId: details.projectId },
+        headers: { authorization: 'Bearer '+details.token} };
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        console.log(body);
+        resolve(body)
+    });
+}
+
 module.exports.register = register
 module.exports.activate = activate
 module.exports.listBeacons = listBeacons
@@ -287,16 +302,4 @@ module.exports.UpdateInfo = UpdateInfo;
 module.exports.getAttachmentDetails = getAttachmentDetails
 module.exports.NamespacesList = NamespacesList
 module.exports.dia = dia
-// module.exports={
-//     register: register(),
-//     activate: activate(),
-//     listBeacons:listBeacons(),
-//     getinfoPerBeacon:getinfoPerBeacon(),
-//     setAttachment:setAttachment(),
-//     deactivateBeacon:deactivateBeacon(),
-//     decommission:decommission(),
-//     deleteAttachment:deleteAttachment(),
-//     UpdateInfo:UpdateInfo(),
-//     getAttachmentDetails:getAttachmentDetails(),
-//     NamespacesList:NamespacesList()
-// }
+module.exports.delBeacon = deleteBeacon

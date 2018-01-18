@@ -4,6 +4,9 @@ $(function(){
     let deact =$('.deactivate')
     let act = $('.activate')
     let info = $('.moreInfo')
+
+    let deleteBeacon = $('.deleteBeacon')
+
     loader = $('#loader')
     loader.hide()
     // Will do at last
@@ -13,7 +16,29 @@ $(function(){
     info.click(moreInfo)
     decom.click(decommsioned)
 
+    deleteBeacon.click(deleteBeacon)
+
 });
+
+function deleteBeacon(eve){
+    let id = $(this).parent().parent().attr('id')
+    let query = {beaconName : id}
+    console.log(id)
+    console.log("clicked delete")
+    loader.show(10)
+    $.post('/delBea',query,(res)=>{
+        console.log(res)
+        loader.hide(10)
+        if(res=="Success"){
+            console.log("Okay")
+            location.reload()
+        }
+        else{
+            console.log(" Not Okay")
+            location.reload()
+        }
+    })
+}
 
 function deactivate(eve){
     let id = $(this).parent().parent().attr('id')
